@@ -93,7 +93,7 @@ public class RenderPlayerEventHandler
     private static boolean isPlayerNameOrUuidEqual(EntityPlayer e, String... namesUuids) {
         for( String val : namesUuids ) {
             GameProfile profile = e.getGameProfile();
-            if( (UuidUtils.isStringUuid(val) && profile.getId().equals(UUID.fromString(val))) || profile.getName().equals(val) ) {
+            if( (UuidUtils.isStringUuid(val) && UUID.fromString(val).equals(profile.getId())) || val.equals(profile.getName()) ) {
                 return true;
             }
         }
